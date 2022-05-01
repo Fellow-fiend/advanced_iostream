@@ -17,12 +17,12 @@
 
 
 template <typename T>
-using predicat = std::enable_if_t<(sizeof(typename T::value_type) != sizeof(T)) 
-                                && !std::is_convertible_v<T, std::string>,
-                                std::ostream&>;
+using not_trivial_type = typename std::enable_if<(sizeof(typename T::value_type) != sizeof(T)) 
+                                && !std::is_convertible<T, std::string>::value,
+                                std::ostream&>::type;
 
 /* Output */
-template <typename T, typename = predicat<T> >
+template <typename T, typename = not_trivial_type<T> >
 std::ostream& operator<< (std::ostream& out, const T& coll)
 {
     for (const auto& item : coll)
@@ -73,7 +73,7 @@ std::ostream& operator<< (std::ostream& out, const std::unordered_multimap<T, V>
 #endif
 
 /* Input */
-template <typename T, typename = predicat<T> >
+template <typename T, typename = not_trivial_type<T> >
 std::istream& operator>> (std::istream& input, T& coll)
 {
     for (auto& item : coll)
