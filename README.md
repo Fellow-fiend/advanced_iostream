@@ -135,7 +135,7 @@ Compiler with support C++11 and above.
 
 ## Installation
     
-    git clone 
+    git clone git@github.com:Fellow-fiend/advanced_iostream.git 
     
 For include to your app:
     
