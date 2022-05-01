@@ -1,5 +1,5 @@
 /*  © Fellow-fiend
- *  Advanced input/output library can input or output from(to) standart stream 
+ *  Advanced input/output library can input/output from/to standard stream 
  *  std::vector<T>, std::array<T>, std::list<T>, std::forward_list<T>, std::deque<T>,
  *  std::map<Key, Value>, std::multimap<Key, Value>, std::unordered_map<Key, Value>, std::unordered_multimap<Key, Value>
  *  std::set<T>, std::multiset<T>, std::unordered_set<T>, std::unordered_multiset<T>.

@@ -5,7 +5,7 @@
 ---
 
 ## Description
-Library for simplefy input & output STL containers.
+The library simplifies input & output STL containers.
 Support all one-dimensional containers:
 - std::vector
 - std::deque
@@ -131,7 +131,7 @@ Output:
     
     
 ## Requirements
-Compiler with support C++17 and above.
+Compiler with support C++11 and above.
 
 ## Installation
     
