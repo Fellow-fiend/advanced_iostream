@@ -17,7 +17,7 @@
 
 
 template <typename T>
-using not_trivial_type = typename std::enable_if<(sizeof(typename T::value_type) != sizeof(T)) 
+using not_trivial_type = typename std::enable_if<(std::is_class<T>::value) 
                                 && !std::is_convertible<T, std::string>::value,
                                 std::ostream&>::type;
 
@@ -28,7 +28,7 @@ std::ostream& operator<< (std::ostream& out, const T& coll)
     for (const auto& item : coll)
         out << item << " ";
 
-    return out << std::endl;
+    return out;
 }
 
 #ifndef WITHOUT_MAP
